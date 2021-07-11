@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Configure your database
-config :phx_base, BasePhx.Repo,
+config :phx_base, PhxBase.Repo,
   username: "postgres",
   password: "postgres",
   database: "phx_base_dev",
@@ -15,7 +15,7 @@ config :phx_base, BasePhx.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :phx_base, BasePhxWeb.Endpoint,
+config :phx_base, PhxBaseWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -55,7 +55,7 @@ config :phx_base, BasePhxWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :phx_base, BasePhxWeb.Endpoint,
+config :phx_base, PhxBaseWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",

@@ -1,4 +1,4 @@
-defmodule BasePhxWeb.ConnCase do
+defmodule PhxBaseWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule BasePhxWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use BasePhxWeb.ConnCase, async: true`, although
+  by setting `use PhxBaseWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,20 +22,20 @@ defmodule BasePhxWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import BasePhxWeb.ConnCase
+      import PhxBaseWeb.ConnCase
 
-      alias BasePhxWeb.Router.Helpers, as: Routes
+      alias PhxBaseWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint BasePhxWeb.Endpoint
+      @endpoint PhxBaseWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(BasePhx.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhxBase.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(BasePhx.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(PhxBase.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

@@ -1,5 +1,5 @@
-defmodule BasePhxWeb.PageLiveTest do
-  use BasePhxWeb.ConnCase
+defmodule PhxBaseWeb.PageLiveTest do
+  use PhxBaseWeb.ConnCase
 
   import Phoenix.LiveViewTest
 

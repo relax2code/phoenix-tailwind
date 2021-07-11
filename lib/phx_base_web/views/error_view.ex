@@ -1,5 +1,5 @@
-defmodule BasePhxWeb.ErrorView do
-  use BasePhxWeb, :view
+defmodule PhxBaseWeb.ErrorView do
+  use PhxBaseWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

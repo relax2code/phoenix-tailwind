@@ -1,4 +1,4 @@
-defmodule BasePhx.DataCase do
+defmodule PhxBase.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule BasePhx.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use BasePhx.DataCase, async: true`, although
+  by setting `use PhxBase.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule BasePhx.DataCase do
 
   using do
     quote do
-      alias BasePhx.Repo
+      alias PhxBase.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import BasePhx.DataCase
+      import PhxBase.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(BasePhx.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PhxBase.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(BasePhx.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(PhxBase.Repo, {:shared, self()})
     end
 
     :ok

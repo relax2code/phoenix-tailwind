@@ -1,12 +1,12 @@
-defmodule BasePhxWeb do
+defmodule PhxBaseWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use BasePhxWeb, :controller
-      use BasePhxWeb, :view
+      use PhxBaseWeb, :controller
+      use PhxBaseWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,11 +19,11 @@ defmodule BasePhxWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: BasePhxWeb
+      use Phoenix.Controller, namespace: PhxBaseWeb
 
       import Plug.Conn
-      import BasePhxWeb.Gettext
-      alias BasePhxWeb.Router.Helpers, as: Routes
+      import PhxBaseWeb.Gettext
+      alias PhxBaseWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -31,7 +31,7 @@ defmodule BasePhxWeb do
     quote do
       use Phoenix.View,
         root: "lib/phx_base_web/templates",
-        namespace: BasePhxWeb
+        namespace: PhxBaseWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule BasePhxWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {BasePhxWeb.LayoutView, "live.html"}
+        layout: {PhxBaseWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -72,7 +72,7 @@ defmodule BasePhxWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import BasePhxWeb.Gettext
+      import PhxBaseWeb.Gettext
     end
   end
 
@@ -87,9 +87,9 @@ defmodule BasePhxWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import BasePhxWeb.ErrorHelpers
-      import BasePhxWeb.Gettext
-      alias BasePhxWeb.Router.Helpers, as: Routes
+      import PhxBaseWeb.ErrorHelpers
+      import PhxBaseWeb.Gettext
+      alias PhxBaseWeb.Router.Helpers, as: Routes
     end
   end
 

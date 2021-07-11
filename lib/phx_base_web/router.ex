@@ -1,11 +1,11 @@
-defmodule BasePhxWeb.Router do
-  use BasePhxWeb, :router
+defmodule PhxBaseWeb.Router do
+  use PhxBaseWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {BasePhxWeb.LayoutView, :root}
+    plug :put_root_layout, {PhxBaseWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,14 +14,14 @@ defmodule BasePhxWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", BasePhxWeb do
+  scope "/", PhxBaseWeb do
     pipe_through :browser
 
     live "/", PageLive, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", BasePhxWeb do
+  # scope "/api", PhxBaseWeb do
   #   pipe_through :api
   # end
 
@@ -37,7 +37,7 @@ defmodule BasePhxWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: BasePhxWeb.Telemetry
+      live_dashboard "/dashboard", metrics: PhxBaseWeb.Telemetry
     end
   end
 end

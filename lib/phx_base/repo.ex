@@ -1,4 +1,4 @@
-defmodule BasePhx.Repo do
+defmodule PhxBase.Repo do
   use Ecto.Repo,
     otp_app: :phx_base,
     adapter: Ecto.Adapters.Postgres

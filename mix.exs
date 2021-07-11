@@ -1,4 +1,4 @@
-defmodule BasePhx.MixProject do
+defmodule PhxBase.MixProject do
   use Mix.Project
 
   def project do
@@ -19,7 +19,7 @@ defmodule BasePhx.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {BasePhx.Application, []},
+      mod: {PhxBase.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

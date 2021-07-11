@@ -8,16 +8,16 @@
 use Mix.Config
 
 config :phx_base,
-  namespace: BasePhx,
-  ecto_repos: [BasePhx.Repo],
+  namespace: PhxBase,
+  ecto_repos: [PhxBase.Repo],
   generators: [binary_id: true]
 
 # Configures the endpoint
-config :phx_base, BasePhxWeb.Endpoint,
+config :phx_base, PhxBaseWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "JZyk3KPexxT2W4T69vE2XEMIKL7eQIFSQ/zPejUDtbTS9q+aoWnc10QVfoBZk3Vh",
-  render_errors: [view: BasePhxWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: BasePhx.PubSub,
+  render_errors: [view: PhxBaseWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PhxBase.PubSub,
   live_view: [signing_salt: "G+p6zfa3"]
 
 # Configures Elixir's Logger

@@ -1,4 +1,4 @@
-# BasePhx
+# PhxBase
 
 To start your Phoenix server:
 

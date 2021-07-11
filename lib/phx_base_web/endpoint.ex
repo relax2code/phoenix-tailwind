@@ -1,4 +1,4 @@
-defmodule BasePhxWeb.Endpoint do
+defmodule PhxBaseWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :phx_base
 
   # The session will be stored in the cookie and signed,
@@ -10,7 +10,7 @@ defmodule BasePhxWeb.Endpoint do
     signing_salt: "8oPam5eq"
   ]
 
-  socket "/socket", BasePhxWeb.UserSocket,
+  socket "/socket", PhxBaseWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -50,5 +50,5 @@ defmodule BasePhxWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug BasePhxWeb.Router
+  plug PhxBaseWeb.Router
 end

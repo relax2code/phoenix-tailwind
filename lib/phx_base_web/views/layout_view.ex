@@ -1,3 +1,3 @@
-defmodule BasePhxWeb.LayoutView do
-  use BasePhxWeb, :view
+defmodule PhxBaseWeb.LayoutView do
+  use PhxBaseWeb, :view
 end
