@@ -28,6 +28,9 @@ config :phx_base, PhxBaseWeb.Endpoint,
       "--watch-options-stdin",
       cd: Path.expand("../assets", __DIR__)
     ]
+  ],
+  live_reload: [
+    interval: 300,  # Delay to 300 ms  because it's faster than Tailwind JIT , can be adjusted according to the condition
   ]
 
 # ## SSL Support
